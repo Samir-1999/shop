@@ -249,9 +249,9 @@ li > a:only-child:after {
     /* Hide the navigation menu by default */
     /* Also hide the  */
     .toggle + a,
-    .menu {
+    /*.menu {
         display: none;
-    }
+    }*/
 
     /* Stylinf the toggle lable */
     .toggle {
