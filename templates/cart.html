@@ -3,6 +3,11 @@
 {% block header %} bg1 {% endblock header %}
 {% block tovar %}
          <table class="basket-table">
+             {% if is_empty %}
+             <div class="width100 col-lg-9" align="center">
+               <span class="font24">Корзина пуста, перейдите <a href="/">на главную</a> чтобы начать покупки.</span>
+             </div>
+             {% endif %}
              {% for item in cart %}
              <tr>
              <th>&nbsp;</th>
@@ -43,7 +48,13 @@
          </table>
 <style>
     #contacts{
-    width: 100%;
-}
+        width: 100%;
+    }
+    .width100{
+        width: 100%;
+    }
+    .font24{
+        font-size: 24px;
+    }
 </style>
 {% endblock tovar %}

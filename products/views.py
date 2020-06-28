@@ -82,6 +82,6 @@ def get_cart(request):
         for item in items:
             OrderProduct.objects.create(order=order, tovar= Tovar.objects.get(id=item.object_id), kol=item.quantity)
         return render(request, 'products/after_buy.html', {'order_id': order.id,'latest_products': latest_products,"categories": Category.objects.all()})
-    return render(request, 'cart.html', {'cart': cart, 'summary': cart.summary() ,'latest_products': latest_products,"categories": Category.objects.all()})
+    return render(request, 'cart.html', {'cart': cart, 'summary': cart.summary() ,'latest_products': latest_products,"categories": Category.objects.all(), 'is_empty': len(list(cart))==0})
 
 
